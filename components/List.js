@@ -1,31 +1,34 @@
 import styled from "styled-components";
 import { nowPlayingMovies } from "../lib/db";
-import MovieCard from "./Card";
+import Card from "./Card";
 
 const StyledList = styled.li`
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+`;
+
+const StyledUl = styled.ul`
   list-style-type: none;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
 `;
 
-export default function NowPlayinglist() {
+export default function Movielist() {
   return (
     <>
-      <h3>Now Playing</h3>
+      <h1>Now Playing</h1>
 
       <ul>
-        <StyledList>
+        <StyledUl>
           {nowPlayingMovies.map((movie) => (
-            <li key={movie.id}>
-              <MovieCard
-                image={movie.image}
-                year={movie.year}
-                title={movie.title}
-              />
-            </li>
+            <StyledList key={movie.id}>
+              <Card image={movie.image} year={movie.year} title={movie.title} />
+            </StyledList>
           ))}
-        </StyledList>
+        </StyledUl>
       </ul>
     </>
   );

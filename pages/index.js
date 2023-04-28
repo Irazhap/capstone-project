@@ -1,10 +1,6 @@
-import MovieCard from "@/components/Card";
-import NowPlayinglist from "@/components/List";
+import Card from "@/components/Card";
+import Movielist from "@/components/List";
 
 export default function HomePage() {
-  return (
-    <>
-      <NowPlayinglist />
-    </>
-  );
+  return <Movielist />;
 }
