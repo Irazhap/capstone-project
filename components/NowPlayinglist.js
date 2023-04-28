@@ -16,10 +16,10 @@ const StyledUl = styled.ul`
   justify-content: space-around;
 `;
 
-export default function Movielist() {
+export default function NowPlayinglist() {
   return (
     <>
-      <h1>Now Playing</h1>
+      <h2>Now Playing</h2>
 
       <ul>
         <StyledUl>
