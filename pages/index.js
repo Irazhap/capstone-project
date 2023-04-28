@@ -1,7 +1,10 @@
+import MovieCard from "@/components/Card";
+import NowPlayinglist from "@/components/List";
+
 export default function HomePage() {
   return (
-    <div>
-      <h1>Hello from Next.js</h1>
-    </div>
+    <>
+      <NowPlayinglist />
+    </>
   );
 }
