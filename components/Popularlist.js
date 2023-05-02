@@ -16,7 +16,7 @@ const StyledUl = styled.ul`
   justify-content: space-around;
 `;
 
-export default function PopulaList() {
+export default function PopularList() {
   return (
     <>
       <h2>Popular</h2>
