@@ -6,7 +6,7 @@ export default function Card({ image, title, year }) {
     <>
       <Image src={image} alt={title} width={180} height={250} />
       <p>{year}</p>
-      <h2>{title}</h2>
+      <h3>{title}</h3>
     </>
   );
 }

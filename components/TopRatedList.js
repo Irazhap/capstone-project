@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { nowPlayingMovies } from "../lib/db";
+import { topRatedMovies } from "../lib/db";
 import Card from "./Card";
 
 const StyledList = styled.li`
@@ -16,14 +16,14 @@ const StyledUl = styled.ul`
   justify-content: space-around;
 `;
 
-export default function Movielist() {
+export default function TopratedList() {
   return (
     <>
-      <h1>Now Playing</h1>
+      <h2>Top Rated</h2>
 
       <ul>
         <StyledUl>
-          {nowPlayingMovies.map((movie) => (
+          {topRatedMovies.map((movie) => (
             <StyledList key={movie.id}>
               <Card image={movie.image} year={movie.year} title={movie.title} />
             </StyledList>
