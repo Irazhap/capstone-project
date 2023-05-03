@@ -25,7 +25,7 @@ export default function NowPlayingList() {
         <StyledUl>
           {nowPlayingMovies.map((movie) => (
             <StyledList key={movie.id}>
-              <Card image={movie.image} year={movie.year} title={movie.title} />
+              <Card image={movie.image} year={movie.year} />
             </StyledList>
           ))}
         </StyledUl>
