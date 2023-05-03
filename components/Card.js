@@ -5,18 +5,17 @@ const CardImage = styled(Image)`
   border-radius: 10px;
   margin: 10px;
   box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.3);
-  width: 180px;
-  max-width: 250px;
+  width: 100%;
+  min-width: 180px;
+  max-width: 180px;
 `;
 
 const StyledParagraph = styled.p`
-  margin-left: 10px;
-  margin-right: 10px;
+  margin: 0 10px;
 `;
 
 const StyledTitle = styled.h3`
-  margin-left: 10px;
-  margin-right: 10px;
+  margin: 0 10px;
 `;
 
 export default function Card({ image, title, year }) {
