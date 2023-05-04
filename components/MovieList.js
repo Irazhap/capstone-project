@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { upcomingMovies } from "../lib/db";
 import Card from "./Card";
 
 const StyledUl = styled.ul`
@@ -9,12 +8,12 @@ const StyledUl = styled.ul`
   justify-content: space-around;
 `;
 
-export default function UpcomingList() {
+export default function MovieList({ movies, title }) {
   return (
     <>
-      <h2>Upcoming</h2>
+      <h2>{title}</h2>
       <StyledUl>
-        {upcomingMovies.map((movie) => (
+        {movies.map((movie) => (
           <li key={movie.id}>
             <Card image={movie.image} year={movie.year} title={movie.title} />
           </li>
