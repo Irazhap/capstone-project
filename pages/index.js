@@ -1,15 +1,19 @@
-import NowPlayingList from "@/components/NowPlayingList.js";
-import PopularList from "@/components/PopularList.js";
-import UpcomingMovies from "@/components/UpcomingMovies.js";
-import TopratedList from "@/components/TopRatedList.js";
+import {
+  nowPlayingMovies,
+  popularMovies,
+  topRatedMovies,
+  upcomingMovies,
+} from "../lib/db";
+
+import MovieList from "@/components/MovieList";
 
 export default function HomePage() {
   return (
     <>
-      <NowPlayingList />
-      <PopularList />
-      <UpcomingMovies />
-      <TopratedList />
+      <MovieList movies={nowPlayingMovies} title="Now Playing" />
+      <MovieList movies={popularMovies} title="Popular" />
+      <MovieList movies={topRatedMovies} title="Top Rated" />
+      <MovieList movies={upcomingMovies} title="Upcoming" />
     </>
   );
 }
