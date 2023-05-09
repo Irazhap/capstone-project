@@ -13,7 +13,7 @@ const StyledParagraph = styled.p`
   margin: 0 10px;
 `;
 
-const StyledTitle = styled.h3`
+const StyledMovieTitle = styled.h3`
   margin: 0 10px;
 `;
 
@@ -22,7 +22,7 @@ export default function Card({ image, title, year }) {
     <>
       <CardImage src={image} alt={title} width={180} height={250} />
       <StyledParagraph>{year}</StyledParagraph>
-      <StyledTitle>{title}</StyledTitle>
+      <StyledMovieTitle>{title}</StyledMovieTitle>
     </>
   );
 }
