@@ -99,7 +99,7 @@ export default function Header({ isOpen, onToggle }) {
       </Hamburger>
       <NavbarMenu isOpen={isOpen}>
         <NavbarMenuItem>
-          <NavbarLink href="http://localhost:3000/">Home</NavbarLink>
+          <NavbarLink href="/index">Home</NavbarLink>
           <NavbarLink href="/popular">Popular</NavbarLink>
           <NavbarLink href="/toprated">Top Rated</NavbarLink>
           <NavbarLink href="/upcoming">Upcoming</NavbarLink>
