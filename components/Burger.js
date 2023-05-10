@@ -24,9 +24,9 @@ const BurgerItem = styled.div`
   }
 `;
 
-export default function Burger({ isOpen, onClick }) {
+export default function Burger({ onClick }) {
   return (
-    <BurgerItem isOpen={isOpen} onClick={onClick}>
+    <BurgerItem onClick={onClick}>
       <div></div>
       <div></div>
       <div></div>

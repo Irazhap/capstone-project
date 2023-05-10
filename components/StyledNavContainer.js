@@ -1,4 +1,5 @@
 import styled from "styled-components";
+
 export const StyledNavContainer = styled.nav`
   position: fixed;
   top: 60px;
