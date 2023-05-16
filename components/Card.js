@@ -5,24 +5,22 @@ const CardImage = styled(Image)`
   border-radius: 10px;
   margin: 10px;
   box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.3);
-  width: 140px;
-  height: 210px;
 `;
 
 const StyledParagraph = styled.p`
   margin: 0 10px;
 `;
 
-const StyledTitle = styled.h3`
+const StyledMovieTitle = styled.h3`
   margin: 0 10px;
 `;
 
 export default function Card({ image, title, year }) {
   return (
     <>
-      <CardImage src={image} alt={title} width={180} height={250} />
+      <CardImage src={image} alt={title} width={140} height={210} />
       <StyledParagraph>{year}</StyledParagraph>
-      <StyledTitle>{title}</StyledTitle>
+      <StyledMovieTitle>{title}</StyledMovieTitle>
     </>
   );
 }

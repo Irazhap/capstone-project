@@ -5,15 +5,15 @@ import {
   upcomingMovies,
 } from "../lib/db";
 
-import MovieList from "@/components/MovieList";
+import Carousel from "@/components/Carousel";
 
 export default function HomePage() {
   return (
     <>
-      <MovieList movies={nowPlayingMovies} title="Now Playing" />
-      <MovieList movies={popularMovies} title="Popular" />
-      <MovieList movies={topRatedMovies} title="Top Rated" />
-      <MovieList movies={upcomingMovies} title="Upcoming" />
+      <Carousel movies={nowPlayingMovies} title="Now Playing" />
+      <Carousel movies={popularMovies} title="Popular" />
+      <Carousel movies={topRatedMovies} title="Top Rated" />
+      <Carousel movies={upcomingMovies} title="Upcoming" />
     </>
   );
 }

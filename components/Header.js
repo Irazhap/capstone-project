@@ -1,24 +1,27 @@
-import styled from "styled-components";
+import Burger from "./Burger";
+import { StyledHead } from "./StyledHead";
+import { StyledHeaderTitle } from "./StyledHeaderTitle";
+import { StyledNavList } from "./StyledNavList";
+import { StyledListItem } from "./StyledListItem";
+import {
+  StyledNavContainer,
+  StyledTransparentContainer,
+} from "./StyledNavContainer";
 
-const NavContainer = styled.header`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 60px;
-  background-color: #202020;
-  color: #f2f2f2;
-  width: 100%;
-`;
-
-const HeaderTitle = styled.h1`
-  font-size: 2rem;
-  margin: 0;
-`;
-
-export default function Header() {
+export default function Header({ isOpen, onToggle }) {
   return (
-    <NavContainer>
-      <HeaderTitle>The Movie App</HeaderTitle>
-    </NavContainer>
+    <StyledHead>
+      <Burger isOpen={isOpen} onClick={onToggle} />
+      <StyledNavContainer isOpen={isOpen}>
+        <StyledNavList>
+          <StyledListItem href="/index">Home</StyledListItem>
+          <StyledListItem href="/popular">Popular</StyledListItem>
+          <StyledListItem href="/toprated">Top Rated</StyledListItem>
+          <StyledListItem href="/upcoming">Upcoming</StyledListItem>
+        </StyledNavList>
+      </StyledNavContainer>
+      <StyledTransparentContainer isOpen={isOpen} />
+      <StyledHeaderTitle>The Movie App</StyledHeaderTitle>
+    </StyledHead>
   );
 }
