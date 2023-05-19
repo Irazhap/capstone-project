@@ -1,5 +1,5 @@
 import React from "react";
-import useMovieData from "pages/api/upcoming/api_upcoming.js";
+import useSWR from "swr";
 import styled from "styled-components";
 import { StyledCardImage } from "./StyledCardImage";
 
@@ -8,9 +8,14 @@ const Container = styled.div`
   gap: 10px;
   grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
 `;
+const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
 function UpcomingList() {
-  const { movies, isLoading, isError } = useMovieData();
+  const {
+    data: movies,
+    isLoading,
+    isError,
+  } = useSWR("/api/upcoming/api_upcoming", fetcher);
 
   if (isError) {
     return <div>Error: {isError.message}</div>;

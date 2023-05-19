@@ -1,7 +1,7 @@
 import React from "react";
-import useMovieData from "pages/api/popular/api_popular.js";
 import styled from "styled-components";
 import { StyledCardImage } from "./StyledCardImage";
+import useSWR from "swr";
 
 const Container = styled.div`
   display: grid;
@@ -9,8 +9,14 @@ const Container = styled.div`
   grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
 `;
 
+const fetcher = (...args) => fetch(...args).then((res) => res.json());
+
 function PopularList() {
-  const { movies, isLoading, isError } = useMovieData();
+  const {
+    data: movies,
+    isLoading,
+    isError,
+  } = useSWR("/api/popular/api_popular", fetcher);
 
   if (isError) {
     return <div>Error: {isError.message}</div>;
@@ -19,7 +25,7 @@ function PopularList() {
   if (isLoading) {
     return <div>Loading...</div>;
   }
-
+  console.log(movies);
   return (
     <Container>
       {movies.map((movie) => (

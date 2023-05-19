@@ -1,5 +1,5 @@
 import React from "react";
-import useMovieData from "pages/api/top_rated/api_top_rated.js";
+import useSWR from "swr";
 import styled from "styled-components";
 import { StyledCardImage } from "./StyledCardImage";
 
@@ -9,8 +9,14 @@ const Container = styled.div`
   grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
 `;
 
+const fetcher = (...args) => fetch(...args).then((res) => res.json());
+
 function TopRatedList() {
-  const { movies, isLoading, isError } = useMovieData();
+  const {
+    data: movies,
+    isLoading,
+    isError,
+  } = useSWR("/api/top_rated/api_top_rated", fetcher);
 
   if (isError) {
     return <div>Error: {isError.message}</div>;
