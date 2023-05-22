@@ -16,7 +16,7 @@ const List = styled.li`
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
 export default function PopularList() {
-  const { movies, isLoading, isError } = useSWR("/api/popular", fetcher);
+  const { data: movies, isLoading, isError } = useSWR("/api/popular", fetcher);
 
   if (isError) {
     return <div>Error: {isError.message}</div>;
