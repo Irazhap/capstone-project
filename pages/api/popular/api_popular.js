@@ -1,4 +1,4 @@
-import fetcher from "@/pages/services/fetch";
+import fetcher from "@/services/fetch";
 
 export default async function handler(request, response) {
   // const { page } = request.query;
