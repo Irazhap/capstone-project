@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { StyledCardImage } from "./StyledCardImage";
+import { CardImage } from "./CardImage.styled";
 
 const StyledParagraph = styled.p`
   margin: 0 10px;
@@ -12,7 +12,7 @@ const StyledMovieTitle = styled.h3`
 export default function Card({ image, title, year }) {
   return (
     <>
-      <StyledCardImage src={image} alt={title} width={140} height={210} />
+      <CardImage src={image} alt={title} width={140} height={210} />
       <StyledParagraph>{year}</StyledParagraph>
       <StyledMovieTitle>{title}</StyledMovieTitle>
     </>
