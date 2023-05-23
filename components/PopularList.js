@@ -28,7 +28,7 @@ export default function PopularList() {
 
   return (
     <Container>
-      {movies?.map((movie) => (
+      {movies.map((movie) => (
         <List key={movie.id}>
           <CardImage
             src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
