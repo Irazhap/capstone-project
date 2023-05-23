@@ -22,7 +22,7 @@ export default function PopularList() {
     return <div>Error: {isError.message}</div>;
   }
 
-  if (isLoading || !movies) {
+  if (isLoading) {
     return <div>Loading...</div>;
   }
 
