@@ -1,12 +1,12 @@
 import Burger from "./Burger";
-import { StyledHead } from "./StyledHead";
-import { StyledHeaderTitle } from "./StyledHeaderTitle";
-import { StyledNavList } from "./StyledNavList";
-import { StyledListItem } from "./StyledListItem";
+import { StyledHead } from "./Head.styled";
+import { StyledHeaderTitle } from "./HeaderTitle.styled";
+import { StyledNavList } from "./NavList.styled";
+import { StyledListItem } from "./ListItem.styled";
 import {
   StyledNavContainer,
   StyledTransparentContainer,
-} from "./StyledNavContainer";
+} from "./NavContainer.styled";
 
 export default function Header({ isOpen, onToggle }) {
   return (

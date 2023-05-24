@@ -1,11 +1,5 @@
-import Image from "next/image";
 import styled from "styled-components";
-
-const CardImage = styled(Image)`
-  border-radius: 10px;
-  margin: 10px;
-  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.3);
-`;
+import { CardImage } from "./CardImage.styled";
 
 const StyledParagraph = styled.p`
   margin: 0 10px;
