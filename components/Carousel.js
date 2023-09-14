@@ -4,10 +4,17 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { StyledPageTitle } from "./PageTitle.styled";
+
 const StyledSlider = styled(Slider)`
   .slick-slide > li {
     margin: 0 16px;
   }
+
+  //border-top-style: solid;
+  //border-bottom-style: solid;
+  //border-width: 2px;
+  //border-color: #f2f2f2;
+  //background-color: #f2f2f2;
 `;
 
 export default function Carousel({ movies, title }) {
