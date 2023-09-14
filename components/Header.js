@@ -8,14 +8,16 @@ import {
   StyledTransparentContainer,
 } from "./NavContainer.styled";
 
-export default function Header({ isOpen, onToggle }) {
+export default function Header({ isOpen, onToggle, handleClose }) {
   return (
     <StyledHead>
       <Burger isOpen={isOpen} onClick={onToggle} />
       <StyledNavContainer isOpen={isOpen}>
         <StyledNavList>
           <StyledListItem href="/index">Home</StyledListItem>
-          <StyledListItem href="/popular">Popular</StyledListItem>
+          <StyledListItem isOpen={isOpen} href="/popular">
+            Popular
+          </StyledListItem>
           <StyledListItem href="/toprated">Top Rated</StyledListItem>
           <StyledListItem href="/upcoming">Upcoming</StyledListItem>
         </StyledNavList>
