@@ -15,7 +15,7 @@ export default function Header({ isOpen, onToggle, handleClose }) {
       <StyledNavContainer isOpen={isOpen}>
         <StyledNavList>
           <StyledListItem href="/index">Home</StyledListItem>
-          <StyledListItem isOpen={isOpen} href="/popular">
+          <StyledListItem isOpen={isOpen} href="/popular/popular">
             Popular
           </StyledListItem>
           <StyledListItem href="/toprated">Top Rated</StyledListItem>

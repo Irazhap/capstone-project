@@ -1,0 +1,80 @@
+/*
+export default async function handler(request, response) {
+  try {
+    const { page } = request.query;
+    const url = `https://api.themoviedb.org/3/movie/movie_id?api_key=${process.env.API}&language=en-US`;
+    const movieData = await fetcher(url);
+    response.status(200).json(movieData);
+  } catch (error) {
+    response
+      .status(500)
+      .json({ error: "An error occurred while fetching the data" });
+  }
+}
+*/
+
+/*export default async function handler(request, response) {
+  try {
+    const { id } = request.query;
+    // Hier musst du die Daten des Films mit der gegebenen ID abrufen
+    const movieData = await fetchDataForMovie(id);
+    response.status(200).json(movieData);
+  } catch (error) {
+    response
+      .status(500)
+      .json({ error: "An error occurred while fetching the data" });
+  }
+}*/
+
+export default async function handler(request, response) {
+  try {
+    const { id } = request.query;
+    const movieId = id;
+
+    // Ersetze 'YOUR_API_KEY' durch deinen tatsächlichen TMDB API-Schlüssel
+    const apiKey = `${process.env.API_KEY}`;
+
+    // Definiere die Informationen, die du abrufen möchtest (z.B. videos, images, credits)
+    const appendToResponse = "videos,images,credits";
+
+    const options = {
+      method: "GET",
+      headers: {
+        accept: "application/json",
+        Authorization: `Bearer ${apiKey}`,
+      },
+    };
+
+    // Füge den append_to_response-Parameter zum URL hinzu
+    const url = `https://api.themoviedb.org/3/movie/${movieId}?api_key=${process.env.API_KEY}&language=en-US&append_to_response=${appendToResponse}`;
+
+    const fetchResponse = await fetch(url, options);
+
+    if (!fetchResponse.ok) {
+      throw new Error(`Failed to fetch data: ${fetchResponse.statusText}`);
+    }
+
+    const movieData = await fetchResponse.json();
+    response.status(200).json(movieData);
+  } catch (error) {
+    response
+      .status(500)
+      .json({ error: "An error occurred while fetching the data" });
+  }
+}
+
+// pages/api/movie/[id].js
+/*
+export default async function handler(request, response) {
+  try {
+    const { id } = request.query;
+    const url = `https://api.themoviedb.org/3/movie/${id}?api_key=${process.env.API_KEY}&language=en-US`;
+    const movieData = await fetcher(url);
+    response.status(200).json(movieData);
+  } catch (error) {
+    response
+      .status(500)
+      .json({ error: "An error occurred while fetching the data" });
+  }
+}
+*/
